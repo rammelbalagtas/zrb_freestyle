@@ -1,0 +1,5 @@
+@EndUserText.label: 'sales order'
+define service Zsd_salesorder {
+  expose zi_salesorder_db   as Header;
+  expose zi_salesorder_item as Item;
+}

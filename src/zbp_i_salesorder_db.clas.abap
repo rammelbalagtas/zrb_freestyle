@@ -1,0 +1,5 @@
+CLASS zbp_i_salesorder_db DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_salesorder_db.
+ENDCLASS.
+
+CLASS zbp_i_salesorder_db IMPLEMENTATION.
+ENDCLASS.

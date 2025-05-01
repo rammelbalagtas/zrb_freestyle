@@ -1,0 +1,17 @@
+managed implementation in class zbp_i_massupload unique;
+strict ( 2 );
+
+define behavior for zi_massupload //alias <alias_name>
+persistent table zmassupload
+lock master
+authorization master ( instance )
+
+{
+  create;
+  update;
+  delete;
+  field ( numbering: managed ) id;
+  field ( readonly ) id, lastChangedAt, lastChangedBy;
+
+  validation ValidateData on save { create; update; }
+}

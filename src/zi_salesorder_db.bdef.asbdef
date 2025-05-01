@@ -1,0 +1,29 @@
+managed implementation in class zbp_i_salesorder_db unique;
+strict ( 2 );
+
+define behavior for zi_salesorder_db //alias <alias_name>
+persistent table zsalesorderdb
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  field ( numbering : managed ) id;
+  field ( readonly ) id, lastChangedAt, lastChangedBy;
+  association _Item { create; }
+}
+
+define behavior for zi_salesorder_item //alias <alias_name>
+persistent table zsalesorderitm
+lock dependent by _Header
+authorization dependent by _Header
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly: update ) Product;
+  field ( readonly ) Id, lastChangedAt, lastChangedBy;
+  association _Header;
+}

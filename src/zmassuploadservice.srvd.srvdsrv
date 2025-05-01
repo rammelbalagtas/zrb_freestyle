@@ -1,0 +1,4 @@
+@EndUserText.label: 'ZMassUploadService'
+define service ZMassUploadService {
+  expose zi_massupload as MassUpload;
+}
